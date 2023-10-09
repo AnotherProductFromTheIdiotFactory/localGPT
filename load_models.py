@@ -43,8 +43,8 @@ def load_quantized_model_gguf_ggml(model_id, model_basename, device_type, loggin
             resume_download=True,
             cache_dir=MODELS_PATH,
         )
-        repo_id="TheBloke/Mistral-7B-Instruct-v0.1-GGUF"
-        filename="mistral-7b-instruct-v0.1.Q6_K.gguf"
+        #repo_id="TheBloke/Mistral-7B-Instruct-v0.1-GGUF"
+        #filename="mistral-7b-instruct-v0.1.Q6_K.gguf"
         #logging.info("model_id: {repo_id}  model_base: {filename}")
         kwargs = {
             "model_path": model_path,

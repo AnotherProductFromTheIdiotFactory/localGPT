@@ -1,0 +1,120 @@
+ 
+ 
+DriveNets Network Operating System (DNOS) 
+A cloud-native, distributed networking software creating a unified shared infrastructure over a distributed architecture 
+ 
+Introduction 
+DriveNets Network Operating System (DNOS) provides operators a competitive advantage over those who still run their networks on traditional monolithic or modular network operating systems. DNOS is a cloud-native, distributed networking software built on containerized microservices. This creates a unified, shared infrastructure over a distributed architecture that eliminates lengthy repetitive manual tasks associated with service deployment. 
+ 
+	Simple to operate 	Same software for all cluster sizes 
+Once provisioned, the cluster, no matter 	The same operating system that runs on a how large, acts as a single network entity, 	2Tbps standalone box can scale to a network like the familiar chassis-based router. 	entity of hundreds of Tbps. 
+ 
+	Hardware agnostic  	Carrier-grade high availability 
+DNOS creates a shared resource pool by 	DNOS provides inherent support for high abstracting any hardware resource for 	availability and resiliency through containers, multiple OCP-standard ODM white boxes. 	microservices and smart clusters. 
+ 
+DNOS services are hardware (HW) agnostic. DNOS creates an abstraction of any HW resource residing in a cluster of OCP-certified original design manufacturer (ODM) white boxes (WBs) into a virtual resource consumable by the DNOS services. It provides inherent support for high availability and resilience, achieved through containers, microservices and distributed clusters. 
+DNOS offers a rich set of network solutions, supporting core, aggregation/peering, edge, and access routing as well as hosted third-party services. 
+
+DNOS Highlights  
+DNOS introduces a new way of building networks. It replaces the big, monolithic and challengingto-handle chassis with multiple similar, simplified and vendor-neutral white boxes. It then applies hyperscale cloud operational principles over them to simplify the entire operational model. This enables extreme growth, rapid service innovation and greater service profitability. DNOS control and data planes are natively disaggregated; the data plane is distributed over a cluster of white boxes while the control plane runs on bare metal, inside a virtual machine (VM). 
+DNOS was designed from the ground up to run on multiple ASICs in different setups and to easily adapt to different types of hardware with relatively low effort. The logical separation between the control and data planes ensures a high level of flexibility and quick adaptation.  
+
+DNOS highlights include: 
+? Webscale software architecture: The NOS design is based on a microservice architecture, allowing maximal independence between functions so they can scale and be maintained easily using simple automation tools. 
+? High availability: DNOS architecture inherently enables high availability, where each microservice is backed by another. Using health-check mechanisms for monitoring containers, processes and system resources means a microservice can recover quickly and seamlessly. DNOS? layered and distributed high availability combines classic router high-availability features, such as non-stop routing (NSR)/non-stop forwarding (NSF), with microservice internal orchestration and other high-availability mechanisms.  
+? Natively disaggregated control and data planes: The data plane is wrapped by a hardware abstraction layer (HAL), resulting in low chipset dependency, thus expanding the range of deployable chipsets/chip manufacturers. The flexible interfaces between them ensure easy adaptation. 
+? Same software suite for all deployments: DriveNets disaggregated router supports small to very large routers using the same white box building blocks and can scale from a singlebox-based router to the largest router size available in the market ? all with the same NOS software. Once provisioned, the router cluster formation, no matter how large, acts as a single network entity, like the familiar chassis-based router. 
+? Underlying standard Linux distribution: DNOS provides a scalable, reliable, and programmable infrastructure to run any data and control plane functions (routing and others). Built on a Linux-based OS, containerized microservices and open APIs, it is much easier to adapt and add management, security and enhanced features. 
+? Zero-touch provisioning: Supported from the ground-up, zero-touch provisioning allows for fast and automated deployment. Using an orchestration system, which has an API to the NOS, DNOS automatically detects a scale-up procedure of a white box in a cluster.  
+Moreover, DNOS patent-based technologies ? such as distributed logic, two-phase configuration sync, and a high-scale ultra-fast messaging bus ? enable the implementation of network services over a distributed architecture at telco-grade timing and scale. 
+
+ 
+DNOS Software Design Guidelines  
+DriveNets designed and built DNOS using architectures like those used by hyperscalers when building cloud infrastructure, rather than those used by providers of traditional routing or switching OSs (e.g., IOS, Junos) when building their systems (see appendix A for evolution of network operating system). DNOS is much more than a network operating system; it is a virtualization layer running over white boxes and servers. To ensure this, the following DNOS design guidelines were put forward: 
+? Natively distributed NOS: Contrary to monolithic software, DriveNets DNOS does not assume any specific location for any management or networking function; every element is encapsulated as a container, which provides the flexibility to orchestrate it. 
+? Extensive use of containers: To ease development, deployment and upgrading, DNOS containers function as services that are built, tested and deployed as units. Eventually development is done the same way as testing and deployment in the field. 
+? Optimized resource utilization: Servers are not the only source of compute resources. The compute for services like LACP, BFD, flow monitoring, etc., can be handled locally on the white box (the NCP ? Network Cloud Packet Forwarder) without overloading the controller (the NCC ? Network Cloud Controller). This allows for linear growth whenever a new NCP is added. 
+DNOS Architecture and Key Components  
+DriveNets Network Cloud architecture is flexible and modular. The various software stacks comprising its solution include: 
+? Data path: With its cutting-edge technology of micro-pipelines, the DriveNets softwarebased data path forwards traffic to the next hop along the path in extremely high-speed bitprocessing rates, based on merchant silicon. The packet-forwarding tasks performed by the data path include packet validation, packet lifetime control (TTL), and checksum calculation. 
+? Routing layer: This layer performs route processing, including path computations, routing table maintenance, and reachability propagation, running all required protocols (OSPF, ISIS, BGP, LDP, MPLS, RSVP). 
+? Management layer: This layer includes the command-line interface (CLI), in-band and outof-band management, and monitoring protocols (SNMP and NETCONF). 
+? Infrastructure layer: This layer is responsible for all inter-process communications and the operating system abstraction layer. 
+ 
+Abstraction and Orchestration of the Router Elements  
+DriveNets DNOS is a full-featured networking stack, ready to run on any Network Cloud-certified hardware platform. It creates a unified, shared network infrastructure that spans multiple servers and white boxes and is managed as a single network entity. Combining cloud and virtualization technologies, DNOS enables running any service on the unified shared infrastructure and attaching any service to any port. 
+With DriveNets Network Cloud, every element is a repository of resources. Control card, fabric or line cards all become logical functions that need to be orchestrated and allocated by DNOS to the right place, creating a unified network element.  
+Every element in the cluster is abstracted in the same way so it is easy to stack them. The server and white box contain an x86 chip as both a compute resource and as a networking resource; they also have a switching ASIC (e.g., Broadcom) or software-based data plane (e.g., DPDK). 
+On top of the CPU and switching ASIC is the platform and board controlling mechanism managing the LEDs, fans, power supply units, etc.  
+The base Operating System (base OS), built from DriveNets flavor of Linux, includes an orchestration agent, which allows DriveNets to control the box.  
+On top of the base OS are Docker and the DNOS containers. The containers are where the DriveNets routing functionality application runs. 
+Microservices Everywhere  
+DNOS is a distributed OS running over Docker containers, which offers flexibility, multi-platform support, native virtualization, and fast deployment processes. It is a cloud-native software with open APIs for automation, configuration and telemetry. The use of microservices enables using the same software form factor on different physical form factors.  
+DriveNets uses Docker containers in every part of the software: 
+? Infrastructure layer: Auto-discovery of the Docker containers and mechanisms enables connecting to the right container at the right time ? during a switchover, graceful restart, BGP NSR, etc. 
+? Management plane: Despite the numerous microservices, users experience a single network element (e.g., a single SSH session to a single CLI, just like with a monolithic router). 
+? Control plane: The routing protocols are containerized and can either run on a server or on the x86 chip inside the white box, using the same software. 
+? Data plane: Data path services are containerized and expose software and/or hardwarebased functions (e.g., ACLs, routes FIB, flow monitoring services, performance and fault measurements). 
+NCC Software Architecture 
+The Network Cloud Controller (NCC) can run on a white box (in a standalone router) or on an x86 server (in a cluster router). It typically runs in a redundancy scheme, much like the control plane card in a chassis-based system. The NCC handles all the control and management mechanisms of the router. 
+
+On top of the white box hardware, base OS and the hardware abstraction layer, the NCC includes the following components: 
+? Northbound interfaces: These interfaces allow the NCC to interact with external systems. Such interfaces include a single CLI (regardless of the number of white boxes), NETCONF providing the ability to configure the device using OpenConfig and DriveNets proprietary YANGs, SNMP, syslog, accounting mechanisms (TACACS, RADIUS), and gRPC 
+(OpenConfig gRPC Network Management Interface ? gNMI) for performance management at scale. 
+? NCC Conductor: This component is responsible for Docker cluster management. 
+? Database Manager: Supporting separate candidate and running configurations, the database manager is where the router configuration is stored.  
+? Routing Engine: This manager handles all the routing protocols (BGP, OSPF, IS-IS), traffic engineering protocols (RSVP, segment routing), BGP link state exposing the topology to SDN controllers, PCEP enabling tunnel control, the RIB, storing all the routing information prior to installing routes to the NCPs, and the FIB distribution mechanism handling the logic for installing the routing information on the NCPs. 
+? Management Engine: This manager controls all the router elements (e.g., health-check mechanisms, activation and resetting of the fail-safe mechanism on the white box). 
+? Node Manager: Residing in all DNOS elements (NCC, NCF & NCP), this component runs all common processes that manage element information. The processes are aware of the element type to apply element-specific logic (e.g., HW monitor, local HA logic). 
+NCP & NCF Software Architecture 
+DriveNets took the monolithic chassis and broke it down into building blocks. DriveNets Network Cloud disaggregates the control and data planes, allowing each to scale independently. The control plane runs on x86 servers while the data plane is implemented with a cluster of white boxes. The latter is built from just two building blocks: Network Cloud Packet Forwarder (NCP) and Network Cloud Fabric (NCF). DriveNets Network Cloud scales from a single standalone solution of 2Tbps up to a large cluster of 691Tbps made of dozens of white boxes operating as a single routing entity. 
+
+The software architecture for the white boxes is very similar. In addition to the base OS and hardware abstraction layer, components include: 
+? Chip SDK: the only place where the software interfaces with the Broadcom SDK, allowing easy integration with other chips. 
+? Board support packet (BSP): coming from the hardware for control of fan speed, optics, power supply units, IPMI, firmware upgrades, etc. 
+? NCP: the data path manager, where services like BFD, LACP, access lists, and so on are handled locally on the NCP level, thereby sparing the controller from overloading, circumventing the convergence of the control plane, and optimizing the use of the compute and ASIC resources at scale. 
+? NCF: where the fabric manager provisions the Broadcom Ramon chip, which is a fabric chip responsible for the cell based-forwarding between all NCP white boxes in the system, on top of 400G QSPF-DD interfaces. 
+
+Creating Large-Scale Clusters 
+By creating a cluster, the distributed software architecture provides an end-to-end virtual output queueing (VOQ) networking solution.  
+The NCP is the equivalent of a line card. The NCF is the equivalent of the fabric, interconnecting the data plane of all the NCPs. The data backplane is based on 400GbE interconnect (passive direct attach cable (DAC) copper, active electrical cable (AEC) copper, or active optical cable (AOC) depending on the installation environment constraints). 
+The NCC is based on x86 servers and connects to each cluster device through its 100GbE interface to the NCM (Network Cloud Manager), which is connected to the 10GbE interfaces to all the white boxes, creating the management and control backplane. 
+Once these boxes are installed and powered up, the cluster is orchestrated internally through a call-home mechanism of the white boxes to the controller, which triggers a zero-touch provisioning command to download the software packages to the boxes. This preserves simplicity of the chassis-based router, where the software on the route processor (RP) trickles down to all line cards. Once the provisioning is complete, the cluster acts as a single network element with a single CLI, from which one can control and view every single cluster element with the same simplicity of a chassis-based router (e.g., virtual chassis view, interfaces view, backplane view, showing the interconnections of the devices compared to the connection template). 
+
+The unique capabilities of DNOS operating DriveNets large-scale clusters include: 
+? Multiplexing management and control traffic (e.g., BGP, IS-IS): from all line cards at scale together with internal needs like cluster management, traces, counters, etc. 
+? Layered and distributed high availability: enabling decisions to be made locally even when they have a global effect. 
+? Large distributed transactions: the ability to commit user-defined configurations that provision all line cards without affecting service. 
+? Timing synchronization: the ability to synchronize all the white boxes to the same time base for service and other needs (logs, traces, certificates). 
+? Allocation of module IDs: while the chassis uses slots (physical location) to identify modules, for the disaggregated system DriveNets had to reinvent the mechanism to allow transparency of every device?s physical location and its logical role; for that, DriveNets built a new software-based algorithm which auto-provisions the white boxes in the distributed virtual system (there is no physical slot number). 
+? Handling distributed logs and traces: the ability to debug the system by easily tracing a system-wide event, such as looking at a virtual log file aggregating log entries from many elements. 
+Summary  
+The DNOS best-in-class enabling architecture was built for scale, service growth and orchestration. It completely reinvents router architecture by basing it on the webscale architecture of the cloud. DNOS is a distributed software that enables resource optimization and simplification while still behaving like the familiar monolithic router OS. 
+DNOS is easily portable when deployed to various hardware. It can be deployed either as a standalone self-contained software package or as very large clusters, supporting 10s to 100s of white boxes as a single orchestrated routing entity. 
+
+Appendix A ? Evolution of Network Operating Systems 
+A network operating system (NOS) is a system software that manages the network?s hardware resources and provides services to the application software. While there are many types of operating systems (depending on their functionalities and features), all support industry-standard specified features for establishing VPNs and security processes while going beyond the standards with proprietary techniques for their own equipment.  
+
+ 
+The software architecture of network operating systems has evolved over time:  
+Monolithic OS (e.g., traditional IOS): This OS runs as a single operation and all processes share the same memory space. Bugs in the monolithic software architecture can affect or corrupt other processes. Making changes or adding new features to the OS means it must be disabled and loaded back again with the new features. 
+Modular OS (e.g., IOS-XR, JUNOS): This type of OS runs protected, segregated and exclusive memory space for each process, which run as module on top of the kernel (JUNOS based on FreeBSD and IOS-XR based on Unix QNX). A modular OS supports in-service software upgrades, meaning new features and bug fixes can be added without disabling the entire OS, and functional failures tend to have a more confined impact compared to monolithic OS. The modular architecture enables improved overall network availability. 
+Distributed cloud-native OS (e.g., DNOS): This OS is a cloud-native, distributed networking software built on containerized microservices with distributed networking and compute resources from white boxes and servers to create a unified, shared infrastructure that is managed as a single entity. DriveNets Network Operating System (DNOS), for example, is a distributed cloud-native OS that supports multiple service offerings at scale, including routing (from core to access) and hosting of third-party services. Combining cloud and virtualization technologies, DNOS enables the running of any service on the unified shared infrastructure and dynamically allocating any service to any port. 
+Legacy NOS designs do not fit the evolution of the network as a shared infrastructure. Therefore, a NOS needs to be built using architectures that are more like those used by webscalers for building cloud infrastructure, rather than those used by providers of traditional routing or switching OSs (e.g., IOS, Junos) for building their systems. 
+The advantages of distributed cloud-native NOS include: 
+? Optimal scaling: This type of NOS addresses any scale with telco-grade high availability. Like in any distributed and non-distributed system, when scale comes into play it amplifies the probability of error, exposing any design weakness.  
+? Consistent features across platforms: From the smallest router to the largest, the hierarchy and syntax of the commands are the same.  
+? No performance degradation: Using a virtualization layer, the data plane scales by adding more white boxes to the same logical network element with no performance degradation or downtime. The control plane scales by simply adding more resources to the server. 
+? Seamless integration and automation: These are achieved via open northbound interfaces. 
+2 
+
+2 
+
+
+
+
+
+
+
+
+

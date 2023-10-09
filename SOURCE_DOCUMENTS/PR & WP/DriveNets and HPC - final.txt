@@ -1,0 +1,51 @@
+ 
+Build Networks Like 
+Cloud
+DriveNets is a fast-growing software company that has created a radical new way to build networks. It disaggregates 
+the network infrastructure in the same way hyperscalers built their cloud.
+While the world has moved to software and cloud-native architectures, most networks have remained hardware-centric, 
+based on complex monolithic software. They are now taking advantage of newer software technologies that enable 
+better resource utilization, service scaling and innovative economic models.
+DriveNets Network Cloud is changing the game. The software- based cloud-native networking infrastructure solution 
+supports the highest capacity and scale in the market today, with an innovative economic model.
+?	Disrupting the networking market ? moving it 20 years forward to a software-based, disaggregated model, over 
+white boxes
+?	Customer-proven ? Nearly half of AT&T?s core network and many service providers are using DriveNets Network 
+Cloud
+?	New economic model ? offering network services in an Infrastructure-as-a Services (IaaS) model, running over a 
+shared infrastructure of white box clusters
+?	Optimal scaling ? uniquely scales from a single-box router 
+(4-12 Tbps) to clusters of 100s of white boxes 
+?	Tier-1 ecosystem ? supported by a set of leading hardware and application partners, including chip 
+manufacturers, white box ODMs, optical equipment, and software app providers
+Current HPC Interconnect Challenges
+HPC systems or AI ?supercomputers? are more powerful computing platforms than today?s data centers. HPC can 
+process huge amount of data and perform complex calculations at very high volumes using multiple computers via 
+parallelization methods. HPC systems support large and complex workloads running over individual compute and 
+storage nodes that are working together as a logical cluster and are connected via a high capacity interconnect fabric. 
+The performance requirements of HPC have major interconnect challenges:
+Inefficient performance at scale (Substantially impacts 
+High cost/ low flexibility experience)
+Vendor lock to custom interconnect (e.g. InfiniBand) and 	AI application performance can be impacted by 
+network short refresh cycles (2-3 years) which are mandatory to 	convergence (ECMP based) and lack of e2e 
+QOS, support growing scale (200G/400G and beyond)	especially at high-scale.
+DriveNets Network Cloud ? best fit for HPC 
+cluster interconnect
+DriveNets Network Cloud HPC-Cluster interconnect solution presents a unique and innovative architecture that offers 
+both the high performance and scale of a Fabric interconnect solution and the cost effectiveness of an open, 
+disaggregated cloud model.
+Network Cloud collapses the multiple-tier Clos architecture (ToR-Leaf-Spine-Superspine) to a flat, single switch 
+architecture where inter-rack connectivity is based on a cell-based fabric, rather than Ethernet-based multi-hop 
+interconnect.
+Early tests at select hyperscalers demonstrated 30% higher performance and better resiliency of DriveNets distributed 
+Network Cloud Cluster model as opposed to an Ethernet-based Clos.
+?	Highest Scale  
+?	Up to 9K / 18K GPU (400G/200G) in HPC cluster
+?	Flexible GPU speeds (100G to 800G) ? Highest Performance 
+?	30% higher performance in AI training communication 
+?	Best Resiliency During Failover 
+?	No performance impact on network convergence
+?	Simplified architecture 
+?	Single hop from any GPU to any GPU and scalable QoS (optimal packet-loss, latency, and jitter performance) 
+with a DDC Cell-based architecture
+ 

@@ -30,19 +30,36 @@ def model_memory():
 
 # Sidebar contents
 with st.sidebar:
-    st.title("🤗💬 Converse with your Data")
+    st.sidebar.image("./IMAGES/HAILLE-LOGO.png", use_column_width=True)
+    st.title("HAILLE")
     st.markdown(
         """
+    Hallucinating
+    Artificially
+    Intelligent
+    Large
+    Language
+    Extruder
+    
     ## About
     This app is an LLM-powered chatbot built using:
     - [Streamlit](https://streamlit.io/)
     - [LangChain](https://python.langchain.com/)
+    - [Llama2](https://ai.meta.com/llama/)
+    - [InstructorEmbeddings](https://instructor-embedding.github.io/)
+
+    Based on work by
     - [LocalGPT](https://github.com/PromtEngineer/localGPT) 
+    - [PrivateGPT](https://github.com/imartinez/privateGPT)
  
     """
     )
-    add_vertical_space(5)
-    st.write("Made with ❤️ by [Prompt Engineer](https://youtube.com/@engineerprompt)")
+    add_vertical_space(1)
+    st.markdown(
+        """
+    Made by [TheIdiotFactory](https://github.com/AnotherProductFromTheIdiotFactory)
+        """
+        )
 
 
 if torch.backends.mps.is_available():
@@ -97,7 +114,7 @@ if "QA" not in st.session_state:
     )
     st.session_state["QA"] = QA
 
-st.title("LocalGPT App 💬")
+st.title("HAILLE 💬")
 # Create a text input box for the user
 prompt = st.text_input("Input your prompt here")
 # while True:

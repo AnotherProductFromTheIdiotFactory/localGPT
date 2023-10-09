@@ -1,0 +1,30 @@
+DriveNets Network Orchestrator (DNOR)  automates the deployment, scaling, and management of the DriveNets Network Cloud solution, removing the complexity of provisioning and managing a distributed multi-vendor disaggregated solution while eliminating the inefficiencies that came with operating a traditional chassis-based network.
+KEY 	Automated Operations
+FEATURES	Fully automated life-cycle management of DriveNets Network Cloud PODs (Point-Of-Delivery).
+? Zero-touch provisioning of multi-vendor white box hardware and DriveNets software into a working routing solution
+? Consistent single entity management for any deployment type (standalone or cluster) regardless of topology, size or location
+? Hardware inventory management with details on each white box and its components
+? Automated scale-up and scale-down with no downtime or service impact
+? Modular software orchestration for firmware, BaseOS, NOS containers and hosted services with automatic scaling and failover, scheduled automated tasks, and real-time status
+
+Multi-service Orchestration
+Effortless deployment and management of hosted services - networking and third-party services - running over the shared virtualized Network Cloud infrastructure.
+? Smooth introduction and deployment of hosted services running in separate containers
+? Efficient allocation of Network Cloud infrastructure resources to support service level requirements  (any service, any time, anywhere, at any scale)
+Health Assurance and Monitoring
+Guaranteed availability and performance SLA with automated alarm and KPI monitoring.
+? Granular cluster topology view of hardware and software components
+? Automated fault, performance, and alarm management 
+? Technical support for in-depth system diagnosis and debugging ? Open APIs for easy OSS/BSS integration
+
+
+?[DNOR is the only] orchestrator in the industry that?s designed for  demanding network control plane, automation, and service assurance missions. 
+ It?s a quantum leap forward in realizing the benefits of disaggregated routers.?
+- Tom Nolle, President, CIMI Corporation -
+
+DNOR 
+BENEFITSSimple Operations 
+Experience the operational simplicity of monolithic routers and benefit from the cost and scale of the disaggregated architecture.Short Maintenance Windows
+Minimal service disruption through  separate upgrades of firmware, BaseOS,  and containerized software elements.High Network Availability, Performance, and Reliability
+Proactive monitoring, fast troubleshooting  and debugging, and low MTTR.Faster Time-To-Revenue
+Fast, flexible deployment and growth of networking and third-party services on the shared Network Cloud infrastructure.
