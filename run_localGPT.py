@@ -35,7 +35,7 @@ from constants import (
 )
 
 
-def load_model(device_type, model_id, model_basename=None, LOGGING=logging):
+def load_model(device_type, model_id, model_basename, LOGGING=logging):
     """
     Select a model for text generation using the HuggingFace library.
     If you are running this for the first time, it will download a model for you.
@@ -53,21 +53,25 @@ def load_model(device_type, model_id, model_basename=None, LOGGING=logging):
     Raises:
         ValueError: If an unsupported model or device type is provided.
     """
-    logging.info(f"Loading Model: {model_id}, on: {device_type}")
+    logging.info(f"Loading Model: {model_id}, {model_basename} on: {device_type}")
     logging.info("This action can take a few minutes!")
 
     if model_basename is not None:
         if ".gguf" in model_basename.lower():
+            logging.info(f"calling llm with: {model_id}, {model_basename}")
             llm = load_quantized_model_gguf_ggml(model_id, model_basename, device_type, LOGGING)
+            logging.info("LLM LOADED")
             return llm
         elif ".ggml" in model_basename.lower():
             model, tokenizer = load_quantized_model_gguf_ggml(model_id, model_basename, device_type, LOGGING)
         else:
             model, tokenizer = load_quantized_model_qptq(model_id, model_basename, device_type, LOGGING)
     else:
+        logging.info("loading full model: {model_id}, {model_basename}, on {device_type}")
         model, tokenizer = load_full_model(model_id, model_basename, device_type, LOGGING)
 
     # Load configuration from the model to avoid warnings
+    logging.info("at generate config")
     generation_config = GenerationConfig.from_pretrained(model_id)
     # see here for details:
     # https://huggingface.co/docs/transformers/

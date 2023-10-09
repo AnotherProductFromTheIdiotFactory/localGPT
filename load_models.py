@@ -36,12 +36,16 @@ def load_quantized_model_gguf_ggml(model_id, model_basename, device_type, loggin
 
     try:
         logging.info("Using Llamacpp for GGUF/GGML quantized models")
+        logging.info("---")
         model_path = hf_hub_download(
             repo_id=model_id,
             filename=model_basename,
             resume_download=True,
             cache_dir=MODELS_PATH,
         )
+        repo_id="TheBloke/Mistral-7B-Instruct-v0.1-GGUF"
+        filename="mistral-7b-instruct-v0.1.Q6_K.gguf"
+        #logging.info("model_id: {repo_id}  model_base: {filename}")
         kwargs = {
             "model_path": model_path,
             "n_ctx": CONTEXT_WINDOW_SIZE,
