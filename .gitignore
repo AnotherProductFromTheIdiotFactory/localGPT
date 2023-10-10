@@ -1,7 +1,12 @@
 # Ignore vscode
 /.vscode
-/DB
-/models
+
+# Dont publish models to GIT
+/models/
+
+# Dont publish SOURCE_DOCUMENTS or Vectorised versions
+/DB/
+/SOURCE_DOCUMENTS/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
